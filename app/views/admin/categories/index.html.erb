@@ -1,0 +1,23 @@
+<div class="admin_category">
+  <div class="admin_category_new">
+    <%= form_for @category, url:admin_categories_path do |f| %>
+    	<%= f.label :カテゴリー %>
+    	<%= f.text_field :name %>
+    	<%= f.submit '登録' ,class: 'button btn btn-success' %>
+    <% end %>
+  </div>
+
+  <div class="admin_category_index">
+    <table>
+    <% @categories.each do |category| %>
+      <tr>
+        <th width="25%" class="text-center"><%= category.id %></th>
+        <td><%= category.name %></td>
+        <td width="25%"><%= link_to "削除", admin_category_path(category.id), method: :delete, class: 'btn btn-danger', data:
+         { confirm: "本当に削除しますか？",
+           cancel: "戻る",
+           commit: "削除"}, title:"削除の確認" %>
+        </td>
+      </tr>
+    <% end %>
+</div>

@@ -1,0 +1,29 @@
+<div class="admin_spot_show clearfix">
+  <div class="admin_spot_show_photo clearfix">
+    <%= attachment_image_tag @spot, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+  </div>
+
+  <div class="admin_spot_show_eit"><%= link_to "編集", edit_admin_spot_path(@spot.id) %></div>
+
+  <table>
+  <tr>
+    <th width="20%">ID</th>
+    <td><%= @spot.id %></td>
+  </tr>
+
+  <tr>
+    <th>名称</th>
+    <td><%= @spot.name %></td>
+  </tr>
+
+  <tr>
+    <th>カテゴリー</th>
+    <td><%= @spot.category.name %></td>
+  </tr>
+
+  <tr>
+    <th>説明</th>
+    <td><%= @spot.content %></td>
+  </tr>
+</table>
+</div>

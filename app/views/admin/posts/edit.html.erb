@@ -1,0 +1,62 @@
+<div class="post_form">
+	<%= form_for(@post) do |f| %>
+		<%= f.fields_for :post_images do |formBuilderWithPostImages| %>
+			<%= render 'post_image_fields', f: formBuilderWithPostImages %>
+		<% end %>
+
+		<div>
+  		<%= link_to_add_association '画像の追加', f, :post_images, partial: 'posts/add_image_field' %>
+	  </div>
+
+		<script>
+  	var counter = 0;
+	  document.addEventListener("turbolinks:load", function() {
+  		$('.post_form')
+	  	  .on('cocoon:after-insert', function(e, insertedItem) {
+  			  $(insertedItem).find('.imageFile').attr('id', 'imageFile_' + counter++);
+
+			    $(".imageFile").change(function() {
+			    	var id = $(this).attr('id');
+
+			      var file = $(this).prop("files")[0];
+			      var fr = new FileReader();
+			      $("#" + id).css("background-image", "none");
+			      fr.onload = function() {
+			        $("#" + id).css("background-image", "url(" + fr.result + ")");
+			      };
+			      fr.readAsDataURL(file);
+			      $(".imgPreview img").css("opacity", 0);
+			    });
+     		})
+   	})
+    </script>
+
+		<div class="field">
+			<label class="spot_name">観光地名称</label>
+			<%= f.text_field :spot_id, :value => @post.spot.name, id: "post_spot_field" %>
+		</div>
+
+		<div class="date_input">
+			<label class="visit_date">訪問日</label>
+			<%= f.text_field :visit_date, class:"form-control datetimepicker-input", data: {toggle: "datetimepicker", target: ".datetimepicker-input"}, placeholder: "YYYY/MM/DD" %>
+				<script type="text/javascript">
+					$(function () {
+						$(".datetimepicker-input").datetimepicker({
+						format:'YYYY/MM/DD'
+						});
+					});
+				</script>
+		</div>
+
+		<div class="post_impression">
+			<%= f.text_area :impression %>
+		</div>
+
+		<%= f.submit "編集", class:"btn btn-primary" %>
+
+	<% end %>
+	<%= link_to "削除", post_path, method: :delete, class: 'btn btn-denger', data:
+	 { confirm: "本当に削除しますか？",
+		 cancel: "戻る",
+		 commit: "削除"}, title:"削除の確認" %>
+</div>

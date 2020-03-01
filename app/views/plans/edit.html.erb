@@ -1,0 +1,37 @@
+<div class="destination_edit">
+  <%= form_for @plan do |f| %>
+
+    <div class="plan_show clearfix">
+      <div class="plan_show_name clearfix">
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="plan_date_des">
+        <div class="plan_start clearfix">
+          <%= f.text_field :start_date, class:"form-control datetimepicker-input", data: {toggle: "datetimepicker", target: ".datetimepicker-input"} %>
+        </div>
+        <div class="plan_text">
+          〜
+        </div>
+        <div class="plan_end">
+          <%= f.text_field :end_date, class:"form-control datetimepicker-input", data: {toggle: "datetimepicker", target: ".datetimepicker-input"} %>
+        </div>
+            <script type="text/javascript">
+              $(function () {
+                $(".datetimepicker-input").datetimepicker({
+                format:'YYYY/MM/DD'
+                });
+              });
+            </script>
+      </div>
+    </div>
+
+    <div class="destination_form">
+      <%= render 'form', destination: @destination,f:f %>
+    </div>
+
+    <div class="destination_submit">
+      <%= f.submit "保存", class: "btn btn-success" %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,168 @@
+<div class="top-page">
+  <div class="main-visual">"やくしま へ いこう"</div>
+  <div class="spot_index">
+
+    <table>
+      <div class="index_first">おすすめ</div>
+
+      <% @random.each_slice(5) do |spot1, spot2, spot3, spot4, spot5| %>
+
+        <tr>
+          <td width="25%">
+            <% if spot1 != nil%>
+              <%= link_to spot_path(spot1.id) do %>
+                <%= attachment_image_tag spot1, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot1.id) do %>
+                <div class="index_spot_name"><%= spot1.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot1.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot2 != nil%>
+              <%= link_to spot_path(spot2.id) do %>
+                <%= attachment_image_tag spot2, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot2.id) do %>
+                <div class="index_spot_name"><%= spot2.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot2.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot3 != nil%>
+              <%= link_to spot_path(spot3.id) do %>
+                <%= attachment_image_tag spot3, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot3.id) do %>
+                <div class="index_spot_name"><%= spot3.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot3.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot4 != nil%>
+              <%= link_to spot_path(spot4.id) do %>
+                <%= attachment_image_tag spot4, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot4.id) do %>
+                <div class="index_spot_name"><%= spot4.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot4.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot5 != nil%>
+              <%= link_to spot_path(spot5.id) do %>
+                <%= attachment_image_tag spot5, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot5.id) do %>
+                <div class="index_spot_name"><%= spot5.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot5.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+        </tr>
+
+      <% end %>
+    </table>
+
+    <table>
+      <div class="index_second">スポット一覧</div>
+
+      <% @spots.each_slice(5) do |spot1, spot2, spot3, spot4, spot5| %>
+
+        <tr>
+          <td width="25%">
+            <% if spot1 != nil%>
+              <%= link_to spot_path(spot1.id) do %>
+                <%= attachment_image_tag spot1, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot1.id) do %>
+                <div class="index_spot_name"><%= spot1.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot1.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot2 != nil%>
+              <%= link_to spot_path(spot2.id) do %>
+                <%= attachment_image_tag spot2, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot2.id) do %>
+                <div class="index_spot_name"><%= spot2.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot2.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot3 != nil%>
+              <%= link_to spot_path(spot3.id) do %>
+                <%= attachment_image_tag spot3, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot3.id) do %>
+                <div class="index_spot_name"><%= spot3.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot3.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot4 != nil%>
+              <%= link_to spot_path(spot4.id) do %>
+                <%= attachment_image_tag spot4, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot4.id) do %>
+                <div class="index_spot_name"><%= spot4.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot4.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+          <td width="25%">
+            <% if spot5 != nil%>
+              <%= link_to spot_path(spot5.id) do %>
+                <%= attachment_image_tag spot5, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+              <% end %>
+              <%= link_to spot_path(spot5.id) do %>
+                <div class="index_spot_name"><%= spot5.name %></div>
+              <% end %>
+              <div class="spot_category">
+                <div class="category_name"><%= spot5.category.name %></div>
+              </div>
+            <% end %>
+          </td>
+
+        </tr>
+
+      <% end %>
+    </table>
+    <p id="pageTop"><a href="#">ページのトップへ戻る</a></p>
+  </div>
+</div>

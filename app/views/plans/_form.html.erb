@@ -1,0 +1,9 @@
+<div class="field">
+  <%= f.fields_for :destinations do |destination| %>
+    <%= render 'destination_fields', f: destination %>
+  <% end %>
+
+  <div id="destination_links">
+    <%= link_to_add_association '行き先の追加',f, :destinations %>
+  </div>
+</div>

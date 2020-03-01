@@ -1,0 +1,8 @@
+<div class="nested-fields">
+  <div class="input-file updateIcon">
+    <div class="imgPreview">
+	  <%= f.attachment_field :image, type: "file", class: "imageFile", size:"500x200" %>
+	</div>
+	<%= link_to_remove_association "削除", f %>
+  </div>
+</div>

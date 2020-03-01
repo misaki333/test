@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spot_id: 1
+  plan_id: 1
+  time: 2019-12-08 08:29:43
+  plan: MyString
+
+two:
+  spot_id: 1
+  plan_id: 1
+  time: 2019-12-08 08:29:43
+  plan: MyString

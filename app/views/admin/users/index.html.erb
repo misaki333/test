@@ -1,0 +1,29 @@
+<div class="admin_user_index">
+  <h2>会員一覧</h2>
+		<table class="table-striped admin_spot_table" border="2">
+			<thead>
+				<tr>
+						<th class="text-center"><b>ID</b></th>
+						<th class="text-center"><b>会員名</b></th>
+						<th class="text-center"><b>メールアドレス</b></th>
+				</tr>
+			</thead>
+			<% @users.each do |user| %>
+			<tbody>
+				<tr>
+						<td class="text-center"><%= user.id %></td>
+						<td class="text-center"><%= link_to(admin_user_path(user)) do %>
+						<div><%= user.name %></div>
+					<% end %>
+				</td>
+						<td class="admin_emails"><%= user.email %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+   <div class="row">
+	<div class="col-xs-6 col-xs-offset-3">
+	 <p id="pageTop"><a href="#">ページのトップへ戻る</a></p>
+	</div>
+   </div>
+</div>

@@ -1,0 +1,22 @@
+I"‘(function() {
+  $(document).on('change', '.destination_category_select', function() {
+    console.log($(document));
+    console.log(this);
+    console.log($(this).parent().parent().parent().find("#destination_spot"));
+    return $.ajax({
+      type: 'GET',
+      url: '/destinations/spots_select',
+      data: {
+        category_id: $(this).val()
+      }
+    }).done(function(data) {
+      var destination_spot;
+      destination_spot = $(this).parent().parent().parent().find("#destination_spot");
+      console.log(destination_spot);
+      console.log($('#destination_spot'));
+      return $('#destination_spot').html(data);
+    });
+  });
+
+}).call(this);
+:ET

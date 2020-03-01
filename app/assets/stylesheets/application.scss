@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery-ui
+ *= require jquery-ui/autocomplete
+ *= require bootstrap-datetimepicker
+ *= require_tree .
+ */
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+
+@font-face {
+  font-family: 'komadori';
+  src: font-url('komadori-mini.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  display:block;
+	background-color: #00897B;
+	width: 100%;
+	margin: 0;
+}
+
+.navbar-left {
+  float: left !important;
+}
+
+.navbar-left .header-title {
+  font-family: 'komadori';
+  color: #EEFF41;
+  font-size: 30px;
+}
+
+.navbar-right a {
+  color: #EEFF41;
+}
+
+.navbar-right li {
+	display: inline-block;
+	list-style: none;
+	float: right;
+	margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* body */
+body {
+  background: #e9e9e9;
+  color: #5e5e5e;
+  font: 'Open Sans', sans-serif;
+}
+
+#pageTop {
+  text-align: center;
+  border: solid 1px;
+  margin-top:80px;
+}
+
+#pageTop a {
+  display: block;
+  padding: 0.5em 1em;
+  color: #5E5E5E
+}

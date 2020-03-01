@@ -1,0 +1,31 @@
+<div class="admin_edit_spot">
+	<h2>観光地の編集</h2>
+
+	<%= form_for (@spot), url: admin_spot_path do |f| %>
+		<%= attachment_image_tag @item, :image_id, :fill, 50, 50, format: 'jpg', fallback: "no_image.jpg" %>
+		<%= f.attachment_field :image %>
+
+		<label>観光地名</label>
+		<%= f.text_field :name, autofocus:true %>
+
+		<label>住所</label>
+		<%= f.text_field :address, :size=>"60" %>
+
+	  <label>カテゴリー</label>
+		<%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "選択してください" %>
+		<%= f.hidden_field :category_id, :value => @spot.category.id %>
+
+		<label>説明</label>
+		<%= f.text_area :content %>
+
+		<%= f.submit "更新", class:'btn btn-success' %>
+
+
+	<%= link_to "削除", admin_spot_path, method: :delete, class: 'btn btn-danger', data:
+	 { confirm: "本当に削除しますか？",
+		 cancel: "戻る",
+		 commit: "削除"}, title:"削除の確認" %>
+
+	<% end %>
+
+</div>

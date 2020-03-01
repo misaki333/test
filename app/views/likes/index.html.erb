@@ -1,0 +1,120 @@
+<div class="likes_index">
+  <div class="likes_text">
+    <div class="likes-count">
+      【いいね: <%= @likes.count %>件】
+    </div>
+
+    <% if @likes.any? %>
+
+        <% @likes.each_slice(4) do |like1, like2, like3, like4| %>
+          <div class="likes_table clearfix">
+            <div class="like_first">
+              <% if like1 != nil%>
+                <div class="checkbox">
+                  <%= check_box_tag 'likes[]', like1.id, false, {id: like1.id, form: "formtag"} %>
+                </div>
+
+                <div class="likes_photo">
+                  <%= link_to spot_path(like1.spot.id) do %>
+                    <%= attachment_image_tag like1.spot, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+                  <% end %>
+                </div>
+
+                <div class="likes_category">
+                  <%= like1.spot.category.name %>
+                </div>
+
+                <div class="likes_spot_name">
+                  <%=link_to like1.spot.name, spot_path(like1.spot.id), class: "like_spot_name" %>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="like_second">
+              <% if like2 != nil%>
+                <div class="checkbox">
+                  <%= check_box_tag 'likes[]', like2.id, false, {id: like2.id, form: "formtag"} %>
+                </div>
+
+                <div class="likes_photo">
+                  <%= link_to spot_path(like2.spot.id) do %>
+                    <%= attachment_image_tag like2.spot, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+                  <% end %>
+                </div>
+
+                <div class="likes_category">
+                  <%= like2.spot.category.name %>
+                </div>
+
+                <div class="likes_spot_name">
+                  <%=link_to like2.spot.name, spot_path(like2.spot.id), class: "like_spot_name" %>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="like_third">
+              <% if like3 != nil%>
+                <div class="checkbox">
+                  <%= check_box_tag 'likes[]', like3.id, false, {id: like3.id, form: "formtag"} %>
+                </div>
+
+                <div class="likes_photo">
+                  <%= link_to spot_path(like3.spot.id) do %>
+                    <%= attachment_image_tag like3.spot, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+                  <% end %>
+                </div>
+
+                <div class="likes_category">
+                  <%= like3.spot.category.name %>
+                </div>
+
+                <div class="likes_spot_name">
+                    <%=link_to like3.spot.name, spot_path(like3.spot.id), class: "like_spot_name" %>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="like_fourth">
+              <% if like4 != nil%>
+                <div class="checkbox">
+                  <%= check_box_tag 'likes[]', like4.id, false, {id: like4.id, form: "formtag"} %>
+                </div>
+
+                <div class="likes_photo">
+                  <%= link_to spot_path(like4.spot.id) do %>
+                    <%= attachment_image_tag like3.spot, :image, :fill, 200, 150, format: 'jpg', fallback: "no_image.jpg" %>
+                  <% end %>
+                </div>
+
+                <div class="likes_category">
+                  <%= like4.spot.category.name %>
+                </div>
+
+                <div class="likes_spot_name">
+                    <%=link_to like4.spot.name, spot_path(like4.spot.id), class: "like_spot_name" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+      <div class="change-position">
+        <%= form_tag(destroy_all_path, method: :delete, id:"formtag") do %>
+          <div class="change-position">
+            <%= submit_tag "チェックしたスポットを削除", class: "like_delete_btn" %>
+          </div>
+        <% end %>
+      </div>
+
+    <% else %>
+      <div class="likes_none">
+        <p>いいねはまだありません。</p>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="user_mypage_link">
+  <%= link_to "マイページ", mypage_path(current_user.id) %>
+</div>

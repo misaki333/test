@@ -1,0 +1,56 @@
+<div class="admin_post_show">
+	<div class="admin_post_edit">
+		<%= link_to "編集", edit_admin_post_path(@post.id), class:"glyphicon glyphicon-pencil" %>
+	</div>
+
+	<table>
+
+		<tr>
+			<td colspan="2" class="admin_post_spot"><%= @post.spot.name %></td>
+		</tr>
+
+		<tr>
+			<th >ユーザid</th>
+			<td class="admin_post_field"><%= @post.user.id %></td>
+		</tr>
+
+		<tr>
+			<th>ユーザ名</th>
+			<td class="admin_post_field"><%= @post.user.name %></td>
+		</tr>
+
+		<tr>
+			<th>投稿日</th>
+			<td class="admin_post_field"><%= @post.created_at.strftime("%Y年%m月%d日") %></td>
+		</tr>
+
+		<tr>
+			<th>訪問日</th>
+			<td class="admin_post_field"><%= @post.visit_date.strftime("%Y年%m月%d日") %></td>
+		</tr>
+
+		<tr>
+			<th></th>
+			<td class="admin_post_field"><%= @post.impression %></td>
+		</tr>
+
+	</table>
+
+	<% @post_images.each_slice(3) do |image1, image2, image3| %>
+		<div class="admin_post_photos">
+			<% if image1 != nil %>
+				<%= attachment_image_tag image1, :image, :fill, 300, 225 %>
+			<% end %>
+
+			<% if image2 != nil %>
+				<%= attachment_image_tag image2, :image, :fill, 300, 225 %>
+			<% end %>
+
+			<% if image3 != nil %>
+				<%= attachment_image_tag image3, :image, :fill, 300, 225 %>
+			<% end %>
+		</div>
+	<% end %>
+
+</div>
+

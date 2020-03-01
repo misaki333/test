@@ -1,0 +1,20 @@
+I"¸(function() {
+  $(function() {
+    return $("#plan_spot_field").autocomplete({
+      source: function(req, res) {
+        return $.ajax({
+          url: "/plans/autocomplete_spot/" + encodeURIComponent(req.term) + ".json",
+          dataType: "json",
+          success: function(data) {
+            return res(data);
+          }
+        });
+      },
+      autoFocus: true,
+      delay: 300,
+      minLength: 2
+    });
+  });
+
+}).call(this);
+:ET

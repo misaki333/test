@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spot_id: 1
+  user_id: 1
+  post_image_id: 1
+  impression: MyText
+  deleted_at: 2019-12-08 08:23:29
+
+two:
+  spot_id: 1
+  user_id: 1
+  post_image_id: 1
+  impression: MyText
+  deleted_at: 2019-12-08 08:23:29

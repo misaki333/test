@@ -1,0 +1,31 @@
+<div class="admin_spot_index">
+	<h2>観光地一覧</h2>
+	<div class="admin_spot_path"><%= link_to "新規登録", new_admin_spot_path,class: 'button btn btn-success' %></div>
+	<table class="table-striped admin_spot_table" border="2">
+		<thead>
+			<tr>
+				<th class="number">ID</th>
+				<th>名称</th>
+				<th>カテゴリー</th>
+				<th>住所</th>
+				<th colspan="2"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @spots.each do |spot| %>
+			<tr>
+				<td width="10%"><%= spot.id %></td>
+				<td width="20%"><%= spot.name %></td>
+				<td width="20%"><%= spot.category.name %></td>
+				<td width="30%" class="admin_spot_ad"><%= spot.address %></td>
+				<td width="10%"><%= link_to "編集", edit_admin_spot_path(spot.id) %></td>
+				<td width="10%"><%= link_to "削除", admin_spot_path(spot.id), method: :delete, data:
+							{ confirm: "本当に削除しますか？",
+								cancel: "戻る",
+								commit: "削除"}, title:"削除の確認" %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

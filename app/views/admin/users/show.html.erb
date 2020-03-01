@@ -1,0 +1,24 @@
+<div class="user_form user_show">
+  <h2>ユーザ情報の確認</h2>
+
+  <table class="user_field">
+  	<tr>
+  		<th>ユーザID</td>
+  		<td><%= @user.id %></td>
+  	</tr>
+
+    <tr>
+    	<th>ユーザ名</th>
+    	<td><%= @user.name %></td>
+  	</tr>
+
+    <tr>
+    	<th>メールアドレス</th>
+    	<td><%= @user.email %></td>
+  	</tr>
+	</table>
+
+  <div class="user_actions">
+    <%= link_to "削除", admin_user_path(params[:id]),method: :delete, "date-comfirm" => "本当に消しますか？", class: 'admin_user_button' %>
+  </div>
+</div>

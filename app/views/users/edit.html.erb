@@ -1,0 +1,28 @@
+<div class="user_form">
+	<h2>アカウント情報の編集</h2>
+
+	<%= form_for(@user) do |f| %>
+
+		<div class="user_field">
+      <%= f.label :ユーザ名 %><br>
+			<%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+		</div>
+
+		<div class="user_field">
+			<%= f.label :メールアドレス %><br>
+			<%= f.email_field :email, autocomplete: "email" %>
+		</div>
+
+		<div class="user_actions">
+			<%= f.submit "保存する", class: 'button' %>
+		</div>
+	<% end %>
+</div>
+
+<div class="user_links">
+	 <%= link_to "マイページ", mypage_path(current_user.id) %>
+</div>
+
+<div class="user_links">
+	 <%= link_to "退会する", exit_path(current_user.id) %>
+</div>

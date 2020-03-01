@@ -1,0 +1,16 @@
+I"^(function() {
+  $(document).on('change', '.destination_category', function() {
+    console.log(document);
+    return $.ajax({
+      type: 'GET',
+      url: '/destinations/spots_select',
+      data: {
+        category_id: $(this).val()
+      }
+    }).done(function(data) {
+      return $('#destination_spot').html(data);
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,9 @@
+<%= form_for @destination do |f| %>
+
+  <%= f.label :category %>
+  <%= f.collection_select :category, Category.all, :id, :name %>
+
+  <%= f.label :spot %>
+  <%= render partial: 'spots', locals: {category_id: Category.first.id} %>
+
+<% end %>

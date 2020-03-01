@@ -1,0 +1,250 @@
+/* about */
+
+.about_page {
+	width: 80%;
+	margin: 6em auto;
+}
+
+.about_box {
+	width: 100%
+}
+
+.about_box .about_first li {
+	list-style: none;
+	padding-right: 0.5em;
+}
+
+.about_first {
+	text-align: left;
+	font-size: 30px;
+	margin-bottom: 3em;
+}
+
+.about_box .about_third li {
+	list-style: none;
+	padding-right: 0.5em;
+}
+
+.about_second {
+	width: 80%;
+	text-align: left;
+	font-size: 30px;
+	padding-left: 3em;
+}
+
+.about_second li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.about_third {
+	text-align: left;
+	font-size: 30px;
+	margin-top: 3em;
+}
+
+/* index */
+
+.top-page {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.main-visual {
+	width: 100%;
+	height: 300px;
+	margin: 50px auto;
+	padding-top: 70px;
+	background-color: white;
+	font-family: 'komadori';
+	text-align: center;
+	font-size: 90px;
+}
+
+.spot_index {
+	width: 100%;
+	margin: 3em auto;
+}
+
+.spot_index table,tr,td {
+	border-bottom: initial;
+}
+
+.sub-menu {
+	text-align: right;
+	font-weight: bolder;
+}
+
+.index_first {
+	font-weight: bolder;
+}
+
+.index_second {
+	font-weight: bolder;
+	margin-top: 3em;
+}
+
+.index_spot_name {
+	font-weight: bolder;
+	font-size: 1.25em;
+	margin-top: 1em;
+	color: #5E5E5E;
+}
+
+.top-page table {
+	margin-bottom: 20px;
+}
+
+.top-page table td {
+	text-align: center;
+	padding: 1em;
+}
+
+
+
+/* show */
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#map {
+	width: 40%;
+	height: 400px;
+	margin-top: 3em;
+	margin-left: 3em;
+	float: left;
+}
+
+.spot_show {
+	width: 80%;
+	margin: 3em auto;
+	background: #fafafa;
+}
+
+.spot_show_first {
+	width: 100%;
+}
+
+.spot_show_second {
+	width: 100%;
+}
+
+.spot_show_image {
+	width: 50%;
+	margin-top: 3em;
+	float: right;
+}
+
+.spot_images {
+	width: 40%;
+	margin-left: 3em;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	float: left;
+}
+
+.spot_image {
+}
+
+.spot_show_image {
+}
+
+.spot_image_first {
+	float: left;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.spot_image_second {
+	float: left;
+	margin-bottom: 0.5em;
+}
+
+.spot_show_text {
+	width: 50%;
+	float: right;
+	padding-top: 2em;
+	margin-right: 3em;
+	padding-bottom: 3em;
+}
+
+.spot_show_name {
+	padding-top: 0.5em;
+	font-weight: bold;
+	font-size: 2.5em;
+}
+
+.heart li{
+	text-align: right;
+	list-style: none;
+	padding-right: 0.5em;
+}
+
+.post_new_button {
+	float: right;
+	border: solid 1px #00897B;
+	background-color: #00897B;
+	border-radius: 5px;
+}
+
+.post_new_button a {
+	color: #EEFF41;
+	padding: 0.3em;
+}
+
+.spot_category {
+	display:inline-block;
+	margin: 1em 0;
+	padding: 0.3em;
+	font-weight: bold;
+	border: solid 1px #EEFF41;
+	background-color: #EEFF41;
+	border-radius: 5px;
+}
+
+.category_name {
+	margin: 0;
+	padding: 0;
+	color: #337AB7;
+}
+
+.address {
+	border-bottom: dotted 2px #87CEFA;
+	margin-bottom: 1em;
+}
+
+.content {
+	border-bottom: dotted 2px #87CEFA;
+	margin-bottom: 1em;
+}
+
+.spot_post_show {
+	margin-top: 1em;
+}
+
+.spot_post_date {
+	width: 100%;
+	background-color: #e9e9e9;
+	text-align: right;
+	padding-right: 0.5em;
+}
+
+.spot_visit_day {
+	padding-left: 0.5em;
+}
+
+.spot_post_user {
+	float: right;
+	padding-right: 0.5em;
+}
+
+.spot_comment {
+	padding-left: 0.5em;
+}
+
+.spot_comment_none {
+	border-bottom: dotted 2px #87CEFA;
+}

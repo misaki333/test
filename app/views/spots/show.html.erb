@@ -1,0 +1,116 @@
+<div class="spot_show">
+
+	<div class="spot_show_first clearfix">
+		<div id="map"></div>
+
+		<div class="spot_show_image">
+			<%= attachment_image_tag @spot, :image, :fill, 530, 400 %>
+		</div>
+	</div>
+
+	<div class="spot_show_second clearfix">
+
+		<div class="spot_images">
+	    <% @posts.each do |post| %>
+	      <% post.post_images.each_slice(2) do |image1, image2| %>
+	        <div  class="spot_image">
+	        	<div class="spot_image_first">
+		        	<% if image1 != nil %>
+			          <%= link_to post_path(post.id) do %>
+			            <%= attachment_image_tag image1, :image, :fill, 200, 150 %>
+			          <% end %>
+			        <% end %>
+			       </div>
+			       <div class="spot_image_second">
+		        	<% if image2 != nil %>
+			          <%= link_to post_path(post.id) do %>
+			            <%= attachment_image_tag image2, :image, :fill, 200, 150 %>
+			          <% end %>
+			        <% end %>
+			      </div>
+	        </div>
+	      <% end %>
+	     <% end %>
+		</div>
+
+		<div class="spot_show_text">
+
+		<% if user_signed_in? %>
+			<div class="spot_show_name"><%= @spot.name %></div>
+      <div id="likes_buttons_<%= @spot.id %>">
+         <%= render partial: 'likes/like', locals: { spot: @spot} %>
+      </div>
+      <div class="post_new_button">
+      	<%= link_to "投稿", new_post_path(@spot.id) %>
+      </div>
+			<div class="spot_category">
+				<div class="category_name"><%= @spot.category.name %></div>
+			</div>
+			<div class="address">
+				<label>住所</label>
+				<%= @spot.address %>
+			</div>
+			<div class="content"><%= @spot.content %></div>
+		<% else %>
+			<div class="spot_show_name"><%= @spot.name %></div>
+			<div class="spot_category">
+				<div class="category_name"><%= @spot.category.name %></div>
+			</div>
+			<div class="address">
+				<label>住所</label>
+				<%= @spot.address %>
+			</div>
+			<div class="content"><%= @spot.content %></div>
+		<% end %>
+
+			<% if @posts.any? %>
+				<% @posts.each do |post| %>
+					<div class="spot_post_show">
+						<div class="spot_post_date">
+							<label>投稿日</label>
+								<%= post.created_at.strftime("%Y/%m/%d") %>
+						</div>
+						<div class="spot_visit_day">
+							<label>訪問日</label>
+								<%= post.visit_date.strftime("%Y/%m/%d") %>
+							<div class="spot_post_user"><%= post.user.name %>さん</div>
+						</div>
+						<div class="spot_comment">
+							<%= post.impression %>
+						</div>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="spot_comment_none">投稿はまだありません。</div>
+			<% end %>
+		</div>
+	</div>
+
+</div>
+
+
+
+<script>
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: <%= @spot.latitude %>, lng: <%= @spot.longitude %>},
+  zoom: 15
+  });
+  let marker = new google.maps.Marker({
+     position: {lat: <%= @spot.latitude %>, lng: <%= @spot.longitude %>},
+     map: map
+  });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GMAP_API_KEY'] %>&callback=initMap" async defer></script>
+
+
+
+
+
+
+
+
+
+

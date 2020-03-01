@@ -1,0 +1,33 @@
+<div class=" user_menu">
+  <%= link_to user_path(@user.id), class: 'mypage_button' do %>
+    <i class="fas fa-user-alt" style="font-size: 60px"></i>
+    <div class="">会員情報編集</div>
+  <% end %>
+
+  <%= link_to news_path, class: 'mypage_button' do %>
+    <i class="fas fa-pen" style="font-size: 60px"></i>
+    <div class="">投稿</div>
+  <% end %>
+
+  <%= link_to likes_path, class: 'mypage_button' do %>
+    <i class="fas fa-heart" style="font-size: 60px"></i>
+    <div class="">お気に入り</div>
+  <% end %>
+
+  <%= link_to plans_path, class: 'mypage_button' do %>
+    <i class="fas fa-book-open" style="font-size: 60px"></i>
+    <div class="">旅のしおり</div>
+  <% end %>
+</div>
+
+<div  class="photos">
+  <% @posts.each do |post| %>
+    <% post.post_images.each do |image| %>
+      <div  class="photo">
+        <%= link_to post_path(post.id) do %>
+          <%= attachment_image_tag image, :image, :fill, 200, 150 %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

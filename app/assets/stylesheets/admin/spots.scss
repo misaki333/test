@@ -1,0 +1,101 @@
+/* new */
+
+.notice {
+  float: left;
+  padding-left: 3em;
+}
+
+.admin_spot_new {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.admin_spot_new table {
+  margin: 0 auto;
+}
+
+.admin_spot_new table th {
+  text-align: center;
+}
+
+.admin_spot_new_btn {
+  text-align: center;
+  margin-top: 3em;
+}
+
+/* index */
+
+.admin_spot_index {
+  margin: 0 auto;
+}
+
+.admin_spot_table td,.admin_emails{
+  padding-left: 1em;
+}
+
+.admin_spot_path {
+  text-align: right;
+  padding-right: 20em;
+  margin-bottom: 1em;
+}
+
+.admin_spot_table {
+  margin: 0 auto;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+.admin_spot_table td {
+  padding-top: 0.5em;
+}
+
+.admin_spot_index table th {
+  text-align: center;
+}
+
+.admin_spot_index table td {
+  text-align: center;
+}
+
+.admin_spot_ad {
+  text-align: left !important;
+  padding-left: 0.5em;
+}
+
+/* edit */
+
+.admin_edit_spot {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* show */
+
+.admin_spot_show {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 6em;
+}
+
+.admin_spot_show_photo {
+  width: 40%;
+  float: left;
+  padding-left: 3em;
+}
+
+.admin_spot_show_eit {
+  float: right
+}
+
+.admin_spot_show table,th,td {
+   border-bottom: 1px solid black;
+   padding-top: 0.5em;
+}
+
+.admin_spot_show th {
+   text-align: center;
+}
+
+.admin_spot_show td {
+  padding-left: 1em;
+}

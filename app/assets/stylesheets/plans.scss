@@ -1,0 +1,197 @@
+/* index */
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.plans_index {
+  width: 80%;
+  margin: 3em auto;
+}
+
+.plan_new {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  background: #fafafa;
+}
+
+.plan_label {
+  float: left;
+  width: 20%;
+  margin: 0.5em;
+}
+
+.plan_name {
+  float: left;
+  width: 70%;
+}
+
+.plan_date_label {
+  float: left;
+  width: 20%;
+  margin: 0.5em;
+}
+
+.plan_date {
+  float: left;
+  width: 70%;
+}
+
+.start_date {
+  float: left;
+  display: block;
+  position: relative;
+}
+
+.plan_date_text {
+  float: left;
+  padding: 0.5em 3em;
+}
+
+.end_date {
+  float: right;
+  display: block;
+  position: relative;
+}
+
+.plan_submit {
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.user_plan_index {
+  width: 60%;
+  margin: 6em auto;
+  padding: 0 1.5em;
+}
+
+.user_plans {
+  margin-top: 2em;
+}
+
+.user_plan_name {
+  width: 100%;
+  float: left;
+  display: block;
+}
+
+.user_plan_start {
+  float: left;
+  display: block;
+  overflow:  hidden;
+}
+
+.user_plan_text {
+  float: left;
+  display: block;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.user_plan_end {
+  float: left;
+  display: block;
+}
+
+.user_plan_edit {
+  text-align: right;
+}
+
+/* show */
+
+.destination_edit {
+  width: 80%;
+  margin: 3em auto;
+}
+
+.plan_show {
+  width: 60%;
+  margin: 0 auto;
+  padding: 3em;
+}
+
+.plan_show_name {
+  float: left;
+  width: 100%;
+}
+
+.plan_date_des {
+  width: 100%;
+}
+
+.plan_start {
+  float: left;
+  display: block;
+  position: relative;
+}
+
+.plan_text {
+  float: left;
+  padding: 0.5em 0em 0.5em 8em;
+}
+
+.plan_end {
+  float: right;
+  display: block;
+  position: relative;
+}
+
+.destination_form {
+  margin: 0 auto;
+}
+
+.destination_submit {
+  text-align: center;
+}
+
+.destination-edit {
+  background: #fafafa;
+  width: 60%;
+  margin: 0 auto;
+  padding: 3em 3em 1em 3em;
+}
+
+.form_date_select {
+    display: inline-block;
+    width: auto;
+}
+
+.destination_select {
+  width: 60%;
+  float: right;
+}
+
+.destination_category {
+  float: left;
+}
+
+.destination_spot {
+  float: right;
+  margin-left: 0;
+}
+
+.plan_content {
+  width: 100%;
+  float: right;
+  margin-top: 2em;
+}
+
+.destination_delete {
+  float: right;
+  width: 100%;
+  text-align: right;
+  margin-top: 1em;
+}
+
+#destination_links {
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+

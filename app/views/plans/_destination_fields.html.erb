@@ -1,0 +1,21 @@
+<div class="nested-fields">
+  <div class="destination-edit clearfix">
+    <div class="destination_time clearfix">
+      <%= f.time_select :time, {}, class: 'form_date_select', include_blank: true %>
+    </div>
+
+    <div class="destination_select">
+
+
+      <div class="plan_content">
+        <%= f.text_area :to_do, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="destination_delete">
+      <%= link_to_remove_association '削除', f %>
+    </div>
+  </div>
+</div>
+
+

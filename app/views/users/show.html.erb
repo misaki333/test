@@ -1,0 +1,21 @@
+<div class="user_form user_show">
+  <h2>アカウント情報の確認</h2>
+
+  <div class="user_field">
+    <label>名前</label>
+    <input type="text" class="form-control" value="<%= @user.name %>" readonly>
+  </div>
+
+  <div class="user_field">
+    <label>メールアドレス</label>
+    <input type="text" class="form-control" value="<%= @user.email %>" readonly>
+  </div>
+
+  <div class="user_actions">
+    <%= link_to "編集する", edit_user_path(@user.id), class: 'user_button' %>
+  </div>
+</div>
+
+<div class="user_links">
+  <%= link_to "マイページ", mypage_path %>
+</div>

@@ -1,0 +1,93 @@
+<div class="post_form">
+  <%= form_for(@post) do |f| %>
+
+    <div class="select_box clearfix">
+      <div class="category_select">
+        <%= f.fields_for :spot do |s| %>
+          <%= s.label :category, "カテゴリー" %>
+          <%= s.collection_select :category, Category.all, :id, :name %>
+        <% end %>
+      </div>
+
+      <div class="spot_select">
+        <%= f.label :spot, "スポット" %>
+        <%= render partial: 'spots', locals: {category_id: Category.first.id} %>
+        <%#= render partial: 'spots', locals: {category_id: Category.first.id, f: f} %>
+
+      </div>
+    </div>
+
+    <div>
+      <%= link_to_add_association '画像の追加', f, :post_images, partial: 'posts/add_image_field' %>
+    </div>
+
+    <script>
+    var counter = 0;
+    document.addEventListener("turbolinks:load", function() {
+      $('.post_form')
+        .on('cocoon:after-insert', function(e, insertedItem) {
+          $(insertedItem).find('.imageFile').attr('id', 'imageFile_' + counter++);
+
+          $(".imageFile").change(function() {
+            var id = $(this).attr('id');
+
+            var file = $(this).prop("files")[0];
+            var fr = new FileReader();
+            $("#" + id).css("background-image", "none");
+            fr.onload = function() {
+              $("#" + id).css("background-image", "url(" + fr.result + ")");
+            };
+            fr.readAsDataURL(file);
+            $(".imgPreview img").css("opacity", 0);
+          });
+        })
+    })
+    </script>
+
+
+    <div class="date_input">
+      <label class="visit_date">訪問日</label>
+      <%= f.text_field :visit_date, class:"form-control datetimepicker-input", data: {toggle: "datetimepicker", target: ".datetimepicker-input"}, placeholder: "YYYY/MM/DD" %>
+        <script type="text/javascript">
+          $(function () {
+            $(".datetimepicker-input").datetimepicker({
+            format:'YYYY/MM/DD'
+            });
+          });
+        </script>
+    </div>
+
+    <div class="post_impression">
+      <%= f.text_area :impression, size: "50x10" %>
+    </div>
+
+    <div class="post_news_btn">
+      <%= f.submit "投稿", class:"btn btn-primary" %>
+    </div>
+
+  <% end %>
+</div>
+
+<div class="user_links">
+ <%= link_to "マイページ", mypage_path(current_user.id) %>
+</div>
+
+
+<script>
+$(document).on('change', '#post_spot_category', function() {
+  console.log(this);
+  return $.ajax({
+    type: 'GET',
+    url: '/posts/spots_select',
+    data: {
+      category_id: $(this).val()
+    }
+  }).done(function(data) {
+    return $('#spot_spot').html(data);
+  });
+});
+</script>
+
+
+
+

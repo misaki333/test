@@ -1,0 +1,49 @@
+/* show */
+
+.admin_post_show {
+	width: 70%;
+	margin: 3em auto;
+}
+
+.admin_post_show table tr {
+	padding-top: 0.5em;
+}
+
+.admin_post_edit {
+	text-align: right;
+}
+
+.admin_post_spot {
+	font-weight: bolder;
+	font-size: 1.5em;
+}
+
+.admin_post_photos {
+	margin-top: 1em;
+}
+
+
+/* index */
+
+.admin_post_index_title {
+	text-align: center;
+}
+
+.admin_post_index {
+	margin: 3em auto;
+}
+
+.admin_post_index th,
+.admin_post_index td {
+	padding: 1em 10px 1em 1em;
+	border-bottom: 1px solid #bbb;
+}
+
+.admin_post_index th {
+	text-align: center;
+}
+
+.text:hover {
+	color: white;
+	background-color: gray;
+}

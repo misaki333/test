@@ -1,0 +1,11 @@
+<h2>カテゴリーの編集</h2>
+
+<%= form_for @category, url:admin_category_path do |f| %>
+<%= f.label :カテゴリー %>
+<%= f.text_field :name, autofocus: true %>
+<%= f.submit '保存', class: 'button btn btn-success' %>
+<%= link_to '削除', admin_category_path, class: 'btn btn-default', method: :delete, data:
+ { confirm: "本当に削除しますか？",
+   cancel: "戻る",
+   commit: "削除"}, title:"削除の確認" %>
+<% end %>

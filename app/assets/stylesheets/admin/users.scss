@@ -1,0 +1,72 @@
+/* menu */
+
+.admin_menu {
+  width: 60%;
+  text-align: center;
+  margin: 6em auto;
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+/* admin_user_index */
+
+.admin_user_index {
+  width: 80%;
+  margin:0 auto;
+}
+
+.admin_user_index table {
+  margin:0 auto;
+}
+
+
+.user_info {
+	border-collapse: separate;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	width: 100%;
+}
+
+.form_control {
+	display: inline-block;
+}
+
+.admin_user_button {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  line-height: 50px;
+  background: #4c6cb3;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+/* admin_user_edit */
+
+.admin_user_field {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+.admin_user_field input {
+  background: #fafafa;
+  border: none;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  height: 50px;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.admin_user_field input:focus {
+  border-bottom: 1px dashed #ccc;
+  outline: none;
+}
